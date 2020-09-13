@@ -20,7 +20,7 @@ or
 
 ## Usage
 
-see full example at `electron-nestjs-integration`
+see full example [here](https://github.com/NimitzDEV/nestjs-electron-integration-example)
 
 ### Bootstrap your nestjs app
 
