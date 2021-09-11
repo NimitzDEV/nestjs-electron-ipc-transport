@@ -1,12 +1,16 @@
 import { CustomTransportStrategy, MessageHandler, Server } from '@nestjs/microservices';
 import { IpcMainEvent } from 'electron';
 import { ipcMessageDispatcher } from './libs/event';
+import { Logger } from '@nestjs/common';
 
 export interface IPCContext {
-	evt: IpcMainEvent
+	evt: IpcMainEvent;
 }
 
 export class ElectronIPCTransport extends Server implements CustomTransportStrategy {
+
+	logger = new Logger(ElectronIPCTransport.name);
+
 	async onMessage(messageChannel: string, ...args: any[]): Promise<any> {
 		const handler: MessageHandler | undefined = this.messageHandlers.get(messageChannel);
 		if (handler) {
@@ -24,7 +28,6 @@ export class ElectronIPCTransport extends Server implements CustomTransportStrat
 	}
 
 	listen(callback: () => void): any {
-		this.logger.setContext(ElectronIPCTransport.name);
 		ipcMessageDispatcher.on('ipc-message', this.onMessage.bind(this));
 		callback();
 	}
