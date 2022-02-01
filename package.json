@@ -1,11 +1,15 @@
 {
   "name": "nestjs-electron-ipc-transport",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "main": "dist/index.js",
   "author": {
     "email": "isnimitz@gmail.com",
     "name": "NimitzDEV",
     "url": "https://isnimitz.com"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/NimitzDEV/nestjs-electron-ipc-transport.git"
   },
   "license": "MIT",
   "scripts": {
