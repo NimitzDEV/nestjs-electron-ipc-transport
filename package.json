@@ -1,6 +1,6 @@
 {
   "name": "nestjs-electron-ipc-transport",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "main": "dist/index.js",
   "author": {
     "email": "isnimitz@gmail.com",
